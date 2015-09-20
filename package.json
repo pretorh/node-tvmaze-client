@@ -1,0 +1,22 @@
+{
+  "name": "node-tvmaze-client",
+  "version": "0.0.0",
+  "description": "A node cli client for the tvmaze api",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pretorh/node-tvmaze-client.git"
+  },
+  "author": "Hendri Pretorius",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pretorh/node-tvmaze-client/issues"
+  },
+  "homepage": "https://github.com/pretorh/node-tvmaze-client#readme"
+}
