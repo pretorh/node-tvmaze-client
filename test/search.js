@@ -19,4 +19,12 @@ describe('search', function() {
             done();
         });
     })
+
+    it('returns the result in array', function(done) {
+        tvmaze.search('robot', function(err, res) {
+            assert(res);
+            assert.equal(3, res.length);
+            done();
+        });
+    });
 });
