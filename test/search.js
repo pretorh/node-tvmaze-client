@@ -18,7 +18,7 @@ describe('search', function() {
             search.done();
             done();
         });
-    })
+    });
 
     it('returns the result in array', function(done) {
         tvmaze.search('robot', function(err, res) {
@@ -37,5 +37,5 @@ describe('search', function() {
             assert(res[1]._raw, 'include the raw response');
             done();
         });
-    })
+    });
 });
