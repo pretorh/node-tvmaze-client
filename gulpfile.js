@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var mocha = require('gulp-mocha');
 var jshint = require('gulp-jshint');
 
-var allFiles = ['test/*.js', 'lib/*.js', '*.js'];
+var allFiles = ['test/*.js', 'lib/*.js', 'bin/*.js', '*.js'];
 
 gulp.task('default', ['watch']);
 
