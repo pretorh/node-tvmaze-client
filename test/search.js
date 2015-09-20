@@ -1,17 +1,13 @@
 var assert = require('assert');
-var nock = require('nock');
-var fs = require('fs');
+var harness = require('./harness');
 var tvmaze = require('../');
 
 describe('search', function() {
-    var search = nock(tvmaze.options.rootUrl)
-        .persist()
-        .get('/search/shows?q=robot')
-        .reply(200, fs.readFileSync(__dirname + '/testdata/shows.json'));
-    after(function() {
-        nock.cleanAll();
-        nock.restore();
+    var search = harness.nock.setup(tvmaze.options.rootUrl, {
+        forUrl: '/search/shows?q=robot',
+        responseFile: 'shows.json'
     });
+    after(harness.nock.clear);
 
     it('search via the url', function(done) {
         tvmaze.search('robot', function(err) {
