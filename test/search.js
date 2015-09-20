@@ -34,7 +34,15 @@ describe('search', function() {
             assert.equal('Mr. Robot', res[1].name);
             assert.equal(2015, res[1].year);
             assert.equal('Running', res[1].status);
-            assert(res[1]._raw, 'include the raw response');
+            assert.strictEqual(undefined, res[1]._raw, 'does not include the raw response by default');
+            done();
+        });
+    });
+
+    it('can include raw response', function(done) {
+        tvmaze.options.includeRaw = true;
+        tvmaze.search('robot', function(err, res) {
+            assert.notStrictEqual(undefined, res[1]._raw, 'include the raw response');
             done();
         });
     });
