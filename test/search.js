@@ -27,4 +27,15 @@ describe('search', function() {
             done();
         });
     });
+
+    it('parses the show details', function(done) {
+        tvmaze.search('robot', function(err, res) {
+            assert.equal(1871, res[1].id);
+            assert.equal('Mr. Robot', res[1].name);
+            assert.equal(2015, res[1].year);
+            assert.equal('Running', res[1].status);
+            assert(res[1]._raw, 'include the raw response');
+            done();
+        });
+    })
 });
