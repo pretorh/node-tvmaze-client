@@ -10,7 +10,7 @@ gulp.task('watch', function() {
     gulp.watch(allFiles, ['test']);
 });
 
-gulp.task('test', function() {
+gulp.task('test', ['hint'], function() {
     return gulp.src(['test/*.js'], { read: false })
         .pipe(mocha())
         .on('error', console.error);
@@ -19,5 +19,6 @@ gulp.task('test', function() {
 gulp.task('hint', function() {
     return gulp.src(allFiles)
         .pipe(jshint())
-        .pipe(jshint.reporter('default'));
+        .pipe(jshint.reporter('default'))
+        .pipe(jshint.reporter('fail'));
 });
