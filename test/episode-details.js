@@ -9,19 +9,21 @@ describe('episode', function() {
     });
 
     describe('list', function() {
-        it('gets the data via the api', function(done) {
-            tvmaze.episodes(1871, function() {
-                episodes.done();
+        var result;
+        beforeEach(function(done) {
+            tvmaze.episodes(1871, function(err, res) {
+                result = res;
                 done();
             });
         });
 
-        it('returns the result in an array', function(done) {
-            tvmaze.episodes(1871, function(err, result) {
-                assert(result);
-                assert.equal(10, result.length);
-                done();
-            });
+        it('gets the data via the api', function() {
+            episodes.done();
+        });
+
+        it('returns the result in an array', function() {
+            assert(result);
+            assert.equal(10, result.length);
         });
     });
 });
