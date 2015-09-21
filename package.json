@@ -30,6 +30,6 @@
     "nock": "2.12.0"
   },
   "bin": {
-    "tvmaze-client": "tvmaze-client.js"
+    "tvmaze-client": "bin/tvmaze-client.js"
   }
 }
