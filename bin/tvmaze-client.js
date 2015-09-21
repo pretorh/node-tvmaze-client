@@ -11,11 +11,15 @@ if (command == 'h') {
 } else if (command === 's') {
     argCountCheck(1);
     tvmaze.search(args[0], printReponse);
+} else if (command === 'l') {
+    argCountCheck(1);
+    tvmaze.episodes(args[0], printReponse);
 }
 
 function usage() {
     console.log('h              help');
     console.log('s <show>       search for show');
+    console.log('l <id>         list episodes for show id');
 }
 
 function argCountCheck(expect) {
