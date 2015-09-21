@@ -33,6 +33,21 @@ describe('episode', function() {
         });
     });
 
+    describe('detail', function() {
+        var result;
+        beforeEach(function(done) {
+            tvmaze.options.includeRaw = false;
+            tvmaze.episodeDetail(1871, 1, 7, function(err, res) {
+                result = res;
+                done();
+            });
+        });
+
+        it('resolves the episode details', function() {
+            assertEpDetails(result);
+        });
+    });
+
     describe('raw details', function() {
         it('list', function(done) {
             tvmaze.options.includeRaw = true;
