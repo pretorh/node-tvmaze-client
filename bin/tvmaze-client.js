@@ -1,6 +1,32 @@
 var tvmaze = require('../');
 
-tvmaze.search(process.argv[2], printReponse);
+var command = process.argv[2];
+var args = process.argv.slice(3);
+if (!command) {
+    usageError('need command as first parameter');
+}
+
+if (command == 'h') {
+    usage();
+} else if (command === 's') {
+    argCountCheck(1);
+    tvmaze.search(args[0], printReponse);
+}
+
+function usage() {
+    console.log('h              help');
+    console.log('s <show>       search for show');
+}
+
+function argCountCheck(expect) {
+    if (args.length != expect)
+        usageError('expected ' + expect + ' argument');
+}
+
+function usageError(s) {
+    console.error(s);
+    process.exit(1);
+}
 
 function printReponse(err, res) {
     if (err) {
