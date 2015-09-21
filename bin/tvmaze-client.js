@@ -1,5 +1,9 @@
 var tvmaze = require('../');
+
+// parse options
+
 var opt = require('node-getopt').create([
+    ['',    'raw',      'include raw details in result'],
 ]).bindHelp().parseSystem();
 
 var command = opt.argv[0];
@@ -7,6 +11,11 @@ var args = opt.argv.slice(1);
 if (!command) {
     usageError('need command as first parameter');
 }
+
+// set options
+tvmaze.options.includeRaw = opt.options.raw;
+
+// parse command
 
 if (command == 'h') {
     usage();
