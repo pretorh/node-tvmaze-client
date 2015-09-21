@@ -15,5 +15,13 @@ describe('episode', function() {
                 done();
             });
         });
+
+        it('returns the result in an array', function(done) {
+            tvmaze.episodes(1871, function(err, result) {
+                assert(result);
+                assert.equal(10, result.length);
+                done();
+            });
+        });
     });
 });
