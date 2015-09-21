@@ -1,7 +1,9 @@
 var tvmaze = require('../');
+var opt = require('node-getopt').create([
+]).bindHelp().parseSystem();
 
-var command = process.argv[2];
-var args = process.argv.slice(3);
+var command = opt.argv[0];
+var args = opt.argv.slice(1);
 if (!command) {
     usageError('need command as first parameter');
 }
