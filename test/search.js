@@ -7,9 +7,8 @@ describe('search', function() {
         forUrl: '/search/shows?q=robot',
         responseFile: 'shows.json'
     });
-    after(harness.nock.clear);
 
-    it('search via the url', function(done) {
+    it('via the url', function(done) {
         tvmaze.search('robot', function(err) {
             search.done();
             done();
