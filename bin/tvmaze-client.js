@@ -17,24 +17,24 @@ tvmaze.options.includeRaw = opt.options.raw;
 
 // parse command
 
-if (command == 'h') {
+if (command == 'h' || command == 'help') {
     usage();
-} else if (command === 's') {
+} else if (command === 's' || command == 'search') {
     argCountCheck(1);
     tvmaze.search(args[0], printReponse);
-} else if (command === 'l') {
+} else if (command === 'l' || command == 'list') {
     argCountCheck(1);
     tvmaze.episodes(args[0], printReponse);
-} else if (command === 'e') {
+} else if (command === 'e' || command == 'episode') {
     argCountCheck(3);
     tvmaze.episodeDetail(args[0], args[1], args[2], printReponse);
 }
 
 function usage() {
-    console.log('h                                  help');
-    console.log('s <show>                           search for show');
-    console.log('l <id>                             list episodes for show id');
-    console.log('e <id> <season> <ep number>        list episodes for show id');
+    console.log('h | help                                   help');
+    console.log('s | search <show>                          search for show');
+    console.log('l | list <id>                              list episodes for show id');
+    console.log('e | episode <id> <season> <ep number>      list episodes for show id');
 }
 
 function argCountCheck(expect) {
