@@ -25,5 +25,19 @@ describe('episode', function() {
             assert(result);
             assert.equal(10, result.length);
         });
+
+        it('parses the episode details', function() {
+            assertEpDetails(result[6]);
+            assert.strictEqual(undefined, result[6]._raw, 'no raw details by details');
+        });
     });
+
+    function assertEpDetails(ep) {
+        assert.equal(167384, ep.id);
+        assert.equal('eps1.6_v1ew-s0urce.flv', ep.name);
+        assert.equal('<p>Elliott goes missing; Mr. Robot tries to pull fsociety back together; Angela goes head-to-head with an old nemesis.</p>', ep.summary);
+        assert.equal(new Date('2015-08-05T22:00:00-04:00') - 0, ep.aired - 0);
+        assert.equal(1, ep.season);
+        assert.equal(7, ep.episodeNumber);
+    }
 });
