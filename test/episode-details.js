@@ -33,13 +33,15 @@ describe('episode', function() {
         });
     });
 
-    it('can include raw details', function(done) {
-        tvmaze.options.includeRaw = true;
-        tvmaze.episodes(1871, function(err, res) {
-            assert.notStrictEqual(undefined, res[6]._raw, 'raw details must be included');
-            assert.strictEqual(undefined, res[6]._raw.aired, 'generated fields should not be on raw data');
-            assert.strictEqual(undefined, res[6]._raw.episodeNumbed, 'generated fields should not be on raw data');
-            done();
+    describe('raw details', function() {
+        it('list', function(done) {
+            tvmaze.options.includeRaw = true;
+            tvmaze.episodes(1871, function(err, res) {
+                assert.notStrictEqual(undefined, res[6]._raw, 'raw details must be included');
+                assert.strictEqual(undefined, res[6]._raw.aired, 'generated fields should not be on raw data');
+                assert.strictEqual(undefined, res[6]._raw.episodeNumbed, 'generated fields should not be on raw data');
+                done();
+            });
         });
     });
 
