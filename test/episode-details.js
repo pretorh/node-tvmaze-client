@@ -11,6 +11,7 @@ describe('episode', function() {
     describe('list', function() {
         var result;
         beforeEach(function(done) {
+            tvmaze.options.includeRaw = false;
             tvmaze.episodes(1871, function(err, res) {
                 result = res;
                 done();
@@ -29,6 +30,14 @@ describe('episode', function() {
         it('parses the episode details', function() {
             assertEpDetails(result[6]);
             assert.strictEqual(undefined, result[6]._raw, 'no raw details by details');
+        });
+    });
+
+    it('can include raw details', function(done) {
+        tvmaze.options.includeRaw = true;
+        tvmaze.episodes(1871, function(err, res) {
+            assert.notStrictEqual(undefined, res[6]._raw, 'raw details must be included');
+            done();
         });
     });
 
