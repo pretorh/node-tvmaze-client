@@ -7,6 +7,7 @@ describe('cache', function() {
     assert.ifError(err, 'cache setup failed');
 
     beforeEach(function() {
+        harness.nock.disableRealNetworkRequests();
         tvmaze.options.useCache = true;
     });
     beforeEach(function(done) {

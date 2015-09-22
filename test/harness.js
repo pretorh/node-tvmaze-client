@@ -12,4 +12,5 @@ module.exports.nock = {
         nock.cleanAll();
         nock.restore();
     },
+    disableRealNetworkRequests: nock.disableNetConnect,
 };
