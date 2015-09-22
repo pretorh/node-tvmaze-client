@@ -4,6 +4,7 @@ var tvmaze = require('../');
 
 var opt = require('node-getopt').create([
     ['',    'raw',      'include raw details in result'],
+    ['',    'cache',    'use redis as cache'],
 ]).bindHelp().parseSystem();
 
 var command = opt.argv[0];
@@ -14,6 +15,14 @@ if (!command) {
 
 // set options
 tvmaze.options.includeRaw = opt.options.raw;
+tvmaze.options.useCache = opt.options.cache;
+
+// setup
+if (tvmaze.options.useCache) {
+    var err = tvmaze.cache.setup();
+    if (err)
+        throw err;
+}
 
 // parse command
 
@@ -54,4 +63,5 @@ function printReponse(err, res) {
     }
 
     console.log(JSON.stringify(res, null, 2));
+    process.exit(0);
 }
