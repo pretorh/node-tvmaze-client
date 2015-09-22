@@ -11,6 +11,7 @@ describe('search', function() {
     var res;
     beforeEach(function(done) {
         tvmaze.options.includeRaw = false;
+        tvmaze.options.useCache = false;
         tvmaze.search('robot', function(err, result) {
             res = result;
             done();

@@ -12,6 +12,7 @@ describe('episode', function() {
         var result;
         beforeEach(function(done) {
             tvmaze.options.includeRaw = false;
+        tvmaze.options.useCache = false;
             tvmaze.episodes(1871, function(err, res) {
                 result = res;
                 done();
