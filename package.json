@@ -32,5 +32,8 @@
   },
   "bin": {
     "tvmaze-client": "bin/tvmaze-client.js"
+  },
+  "optionalDependencies": {
+    "redis": "2.0.0"
   }
 }
