@@ -63,5 +63,7 @@ function printReponse(err, res) {
     }
 
     console.log(JSON.stringify(res, null, 2));
-    process.exit(0);
+    if (tvmaze.options.useCache) {
+        tvmaze.cache.client.end();
+    }
 }
