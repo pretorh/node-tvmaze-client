@@ -21,14 +21,14 @@
   "homepage": "https://github.com/pretorh/node-tvmaze-client#readme",
   "dependencies": {
     "node-getopt": "0.2.3",
-    "request": "2.62.0"
+    "request": "^2.88.2"
   },
   "devDependencies": {
-    "gulp": "3.9.0",
-    "gulp-jshint": "1.11.2",
-    "gulp-mocha": "2.1.3",
-    "mocha": "2.3.2",
-    "nock": "2.12.0"
+    "gulp": "^4.0.2",
+    "gulp-jshint": "^2.1.0",
+    "gulp-mocha": "^8.0.0",
+    "mocha": "^9.0.2",
+    "nock": "^13.1.1"
   },
   "bin": {
     "tvmaze-client": "bin/tvmaze-client.js"
