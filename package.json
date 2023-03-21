@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/pretorh/node-tvmaze-client#readme",
   "dependencies": {
-    "node-getopt": "0.2.3",
-    "request": "2.62.0"
+    "node-fetch": "^2.6.9",
+    "node-getopt": "0.2.3"
   },
   "devDependencies": {
     "gulp": "3.9.0",
