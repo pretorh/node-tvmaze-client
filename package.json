@@ -27,7 +27,7 @@
   "devDependencies": {
     "jshint": "^2.13.6",
     "mocha": "^10.2.0",
-    "nock": "2.12.0"
+    "nock": "^13.3.0"
   },
   "bin": {
     "tvmaze-client": "bin/tvmaze-client.js"
