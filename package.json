@@ -7,6 +7,7 @@
     "test": "test"
   },
   "scripts": {
+    "lint": "jshint ./bin/*.js ./lib/*.js ./test/*.js",
     "test": "mocha"
   },
   "repository": {
@@ -27,6 +28,7 @@
     "gulp": "3.9.0",
     "gulp-jshint": "1.11.2",
     "gulp-mocha": "2.1.3",
+    "jshint": "^2.13.6",
     "mocha": "^10.2.0",
     "nock": "2.12.0"
   },
